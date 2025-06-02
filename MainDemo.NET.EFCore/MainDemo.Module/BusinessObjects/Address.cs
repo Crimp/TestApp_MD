@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel;
+﻿using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.BaseImpl.EF;
-using DevExpress.ExpressApp.DC;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MainDemo.Module.BusinessObjects;
 

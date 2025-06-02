@@ -1,9 +1,9 @@
-﻿using System.Reflection;
-using DevExpress.ExpressApp;
+﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Blazor.DesignTime;
 using DevExpress.ExpressApp.Design;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.Utils;
+using System.Reflection;
 
 namespace MainDemo.Blazor.Server;
 
@@ -23,8 +23,7 @@ public class Program : IDesignTimeApplicationFactory {
             Console.WriteLine($"Exit codes: 0 - {DBUpdaterStatus.UpdateCompleted}");
             Console.WriteLine($"            1 - {DBUpdaterStatus.UpdateError}");
             Console.WriteLine($"            2 - {DBUpdaterStatus.UpdateNotNeeded}");
-        }
-        else {
+        } else {
             AboutInfo.Instance.Version = "Version " + AssemblyInfo.FileVersion;
             AboutInfo.Instance.Copyright = AssemblyInfo.AssemblyCopyright + " All Rights Reserved";
             DevExpress.ExpressApp.FrameworkSettings.DefaultSettingsCompatibilityMode = DevExpress.ExpressApp.FrameworkSettingsCompatibilityMode.Latest;
@@ -35,8 +34,7 @@ public class Program : IDesignTimeApplicationFactory {
                     var services = serviceScope.ServiceProvider;
                     return services.GetRequiredService<IDBUpdater>().Update(ContainsArgument(args, "forceUpdate"), ContainsArgument(args, "silent"));
                 }
-            }
-            else {
+            } else {
                 host.Run();
             }
         }

@@ -21,7 +21,7 @@ namespace MainDemo.Blazor.Server.Controllers {
         }
 
         void OnMessageAdded(string message) {
-            Application?.ShowViewStrategy.ShowMessage(message, InformationType.Success, 5000);
+            Application.ShowViewStrategy.ShowMessage(message, InformationType.Success, 5000);
         }
 
         protected override void OnActivated() {

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Blazor.Editors;
+﻿using DevExpress.ExpressApp.Blazor.Editors;
 using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Model;
 

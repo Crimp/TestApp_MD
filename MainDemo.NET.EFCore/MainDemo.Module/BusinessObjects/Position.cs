@@ -1,8 +1,8 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using DevExpress.Persistent.Base;
+﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Persistent.Validation;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace MainDemo.Module.BusinessObjects;
 

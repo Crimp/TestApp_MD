@@ -1,7 +1,7 @@
-﻿using System.Collections.ObjectModel;
-using DevExpress.ExpressApp.DC;
+﻿using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Editors;
 using DevExpress.Persistent.Validation;
+using System.Collections.ObjectModel;
 
 namespace MainDemo.Module.CodeRules;
 

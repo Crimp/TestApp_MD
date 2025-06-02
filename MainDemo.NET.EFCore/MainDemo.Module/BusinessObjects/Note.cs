@@ -1,8 +1,7 @@
-﻿using System;
-using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
+﻿using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl.EF;
+using System.ComponentModel;
 
 namespace MainDemo.Module.BusinessObjects;
 

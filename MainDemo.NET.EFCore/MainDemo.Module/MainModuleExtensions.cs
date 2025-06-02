@@ -2,7 +2,6 @@
 using DevExpress.ExpressApp.ApplicationBuilder;
 using DevExpress.ExpressApp.Security;
 using DevExpress.Persistent.BaseImpl.EF.PermissionPolicy;
-using MainDemo.Module.Authentication;
 using MainDemo.Module.BusinessObjects;
 using MainDemo.NonPersistent;
 using Microsoft.Extensions.DependencyInjection;

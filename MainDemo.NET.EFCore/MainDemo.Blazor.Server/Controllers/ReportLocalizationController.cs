@@ -1,6 +1,5 @@
 ﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Blazor.Editors;
-using DevExpress.ExpressApp.Blazor.Editors.Adapters;
 using DevExpress.ExpressApp.Blazor.Services;
 using DevExpress.ExpressApp.ReportsV2.Blazor;
 using Microsoft.JSInterop;

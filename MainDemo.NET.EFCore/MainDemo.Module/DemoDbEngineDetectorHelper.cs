@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 
 namespace Demos.Data {
     public static class DemoDbEngineDetectorHelper {
@@ -11,8 +10,7 @@ namespace Demos.Data {
         public static bool IsSqlServerAccessible() {
             if(CheckIsSqlServerAccessible()) {
                 return true;
-            }
-            else {
+            } else {
                 FillUseSQLAlternativeInfo(DemoDbEngineDetectorHelper.DBServerIsNotAccessibleMessage);
                 return false;
             }
@@ -28,8 +26,7 @@ namespace Demos.Data {
                     sqlConnection1.Open();
                     sqlConnection2.Open();
                 }
-            }
-            catch {
+            } catch {
                 result = false;
             }
             isSqlAccessible = result;

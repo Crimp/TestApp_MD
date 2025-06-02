@@ -1,17 +1,15 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-using DevExpress.ExpressApp;
-using DevExpress.ExpressApp.ConditionalAppearance;
+﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
-using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Filtering;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Persistent.BaseImpl.EFCore.AuditTrail;
 using DevExpress.Persistent.Validation;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MainDemo.Module.BusinessObjects;
 [DefaultClassOptions]
@@ -98,7 +96,7 @@ public class Employee : BaseObject {
     public virtual TitleOfCourtesy TitleOfCourtesy { get; set; }
 
     [ExpandObjectMembers(ExpandObjectMembers.Never), VisibleInListView(false)]
-    public virtual Location Location { get; set; }    
+    public virtual Location Location { get; set; }
 
     [CollectionOperationSet(AllowAdd = false, AllowRemove = false)]
     [NotMapped]

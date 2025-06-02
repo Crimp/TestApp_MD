@@ -1,11 +1,11 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using DevExpress.Persistent.Base;
+﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Base.General;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Persistent.Validation;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MainDemo.Module.BusinessObjects;
 
@@ -47,8 +47,7 @@ public class Department : BaseObject, ITreeNode {
             if(childrenBindingList == null) {
                 if(Departments is ObservableCollection<Department> observable) {
                     childrenBindingList = observable.ToBindingList();
-                }
-                else if(Departments is not null) {
+                } else if(Departments is not null) {
                     childrenBindingList = new BindingList<Department>(Departments);
                 }
             }

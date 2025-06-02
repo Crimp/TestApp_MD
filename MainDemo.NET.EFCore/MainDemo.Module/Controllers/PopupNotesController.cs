@@ -1,8 +1,8 @@
-﻿using System.Text.RegularExpressions;
-using DevExpress.ExpressApp;
+﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
 using DevExpress.ExpressApp.Editors;
 using MainDemo.Module.BusinessObjects;
+using System.Text.RegularExpressions;
 
 namespace MainDemo.Module.Controllers;
 
@@ -37,8 +37,7 @@ public class PopupNotesController : ObjectViewController<DetailView, DemoTask> {
     string StripHTML(string HTMLText) {
         if(!String.IsNullOrEmpty(HTMLText)) {
             return Regex.Replace(HTMLText, "<[^>]+>", string.Empty).Replace("&nbsp;", "").Replace("&nbsp", "").Replace(System.Environment.NewLine, "").Replace("\t", "");
-        }
-        else {
+        } else {
             return String.Empty;
         }
 

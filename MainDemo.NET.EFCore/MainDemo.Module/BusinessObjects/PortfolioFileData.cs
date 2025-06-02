@@ -1,7 +1,7 @@
-﻿using System.Text.Json.Serialization;
-using DevExpress.Persistent.Base;
+﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Persistent.Validation;
+using System.Text.Json.Serialization;
 
 namespace MainDemo.Module.BusinessObjects;
 

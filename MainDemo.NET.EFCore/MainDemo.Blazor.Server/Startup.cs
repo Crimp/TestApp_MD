@@ -1,12 +1,8 @@
-﻿using System.Text;
-using Demos.Data;
-using DevExpress.ExpressApp.ApplicationBuilder;
+﻿using DevExpress.ExpressApp.ApplicationBuilder;
 using DevExpress.ExpressApp.Blazor.ApplicationBuilder;
 using DevExpress.ExpressApp.Blazor.Services;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.WebApi.Services;
-using DevExpress.Persistent.Base;
-using DevExpress.Persistent.Base.Security;
 using MainDemo.Blazor.Server.Services;
 using MainDemo.Module;
 using MainDemo.Module.Authentication;
@@ -20,9 +16,9 @@ using Microsoft.AspNetCore.Components.Server.Circuits;
 using Microsoft.AspNetCore.OData;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 namespace MainDemo.Blazor.Server;
 
@@ -102,7 +98,7 @@ public class Startup {
                                 //    businessObjectDbContextOptions.UseSqlServer(connectionString);
                                 //}
                                 //else {
-                                    businessObjectDbContextOptions.UseInMemoryDatabase("InMemory");
+                                businessObjectDbContextOptions.UseInMemoryDatabase("InMemory");
                                 //}
                                 businessObjectDbContextOptions.UseLazyLoadingProxies();
                                 businessObjectDbContextOptions.UseChangeTrackingProxies();
@@ -118,7 +114,7 @@ public class Startup {
                                 //    auditHistoryDbContextOptions.UseSqlServer(connectionString);
                                 //}
                                 //else {
-                                    auditHistoryDbContextOptions.UseInMemoryDatabase("InMemory");
+                                auditHistoryDbContextOptions.UseInMemoryDatabase("InMemory");
                                 //}
                                 auditHistoryDbContextOptions.UseLazyLoadingProxies();
                                 auditHistoryDbContextOptions.UseChangeTrackingProxies();
@@ -139,8 +135,7 @@ public class Startup {
                         ApplicationUser applicationUser = null;
                         if(userData.Contains("@")) {
                             applicationUser = context.ObjectSpace.FirstOrDefault<ApplicationUser>(e => e.Email == userData);
-                        }
-                        else {
+                        } else {
                             applicationUser = context.ObjectSpace.FirstOrDefault<ApplicationUser>(e => e.UserName == userData);
                         }
                         context.User = applicationUser;
@@ -231,8 +226,7 @@ public class Startup {
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "MainDemo WebApi v1");
             });
-        }
-        else {
+        } else {
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }

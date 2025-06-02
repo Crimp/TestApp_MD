@@ -1,7 +1,4 @@
-﻿using System.Data;
-using System.Drawing;
-using System.Security.Cryptography;
-using DevExpress.ExpressApp;
+﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.Updating;
@@ -11,6 +8,8 @@ using DevExpress.Persistent.BaseImpl.EFCore.AuditTrail;
 using DevExpress.Xpo;
 using MainDemo.Module.BusinessObjects;
 using Microsoft.Extensions.DependencyInjection;
+using System.Data;
+using System.Drawing;
 
 namespace MainDemo.Module.DatabaseUpdate;
 public class Updater : ModuleUpdater {
@@ -32,8 +31,7 @@ public class Updater : ModuleUpdater {
         try {
             CreateDepartments();
             CreateEmployees();
-        }
-        catch(Exception e) {
+        } catch(Exception e) {
             Tracing.Tracer.LogText("Cannot initialize employees, departments and positions from the XML file.");
             Tracing.Tracer.LogError(e);
         }
@@ -56,7 +54,7 @@ public class Updater : ModuleUpdater {
                 "does not yet delegate effectively and has a tendency to be overloaded with tasks which should be handed off to subordinates",
                 "to be discussed with the top management..."
             };
-        for(int i = 0; i < topTenEmployees.Count; i++) {
+        for(int i = 0;i < topTenEmployees.Count;i++) {
             Employee employee = topTenEmployees[i];
             if(ObjectSpace.FirstOrDefault<Paycheck>(p => p.Employee == employee) == null) {
                 PayrollSampleDataGenerator.GenerateEmployeePaychecks(ObjectSpace, employee);
@@ -71,8 +69,7 @@ public class Updater : ModuleUpdater {
                     if(stream != null) {
                         file.LoadFromStream(string.Format("{0}.pdf", employee.FullName), stream);
                     }
-                }
-                catch(Exception e) {
+                } catch(Exception e) {
                     Tracing.Tracer.LogText("Cannot initialize FileData for the employee {0}.", employee.FullName);
                     Tracing.Tracer.LogError(e);
                 }
@@ -175,12 +172,10 @@ public class Updater : ModuleUpdater {
             foreach(Employee employee in employees) {
                 if(taskList.Count == 1) {
                     employee.Tasks.Add(taskList[0]);
-                }
-                else if(taskList.Count == 2) {
+                } else if(taskList.Count == 2) {
                     employee.Tasks.Add(taskList[0]);
                     employee.Tasks.Add(taskList[1]);
-                }
-                else {
+                } else {
                     int index = rndGenerator.Next(1, taskList.Count - 2);
                     employee.Tasks.Add(taskList[index]);
                     employee.Tasks.Add(taskList[index - 1]);
@@ -502,7 +497,7 @@ class PayrollSampleDataGenerator {
         var overtimePayRate = rand.Next(15, 25) + rand.Next(5, 5);
         var taxRated = taxRates[rand.Next(0, 3)];
         var hours = rand.Next(0, 5) == 0 ? hoursBaseline[rand.Next(0, 1)] : 40;
-        for(int month = 1; month <= 12; month++) {
+        for(int month = 1;month <= 12;month++) {
             GeneratePaycheck(objectSpace, employee, rand, payRate, overtimePayRate, taxRated, hours,
                 2 * month - 1, new DateTime(day: 1, month: month, year: year), new DateTime(day: 15, month: month, year: year));
             GeneratePaycheck(objectSpace, employee, rand, payRate, overtimePayRate, taxRated, hours,

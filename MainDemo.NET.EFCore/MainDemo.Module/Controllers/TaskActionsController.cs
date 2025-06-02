@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using DevExpress.ExpressApp;
+﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
 using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Utils;
 using MainDemo.Module.BusinessObjects;
+using System.Collections;
 
 namespace MainDemo.Module.Controllers;
 
@@ -75,8 +75,7 @@ public class TaskActionsController : ObjectViewController<ObjectView, DemoTask> 
                 DemoTask objInNewObjectSpace = GetObject((DemoTask)obj, View.ObjectSpace, objectSpace, ref newObjectsCount);
                 objInNewObjectSpace.Priority = (Priority)args.SelectedChoiceActionItem.Data;
             }
-        }
-        else if(args.SelectedChoiceActionItem.ParentItem == setStatusItem) {
+        } else if(args.SelectedChoiceActionItem.ParentItem == setStatusItem) {
             foreach(Object obj in objectsToProcess) {
                 DemoTask objInNewObjectSpace = GetObject((DemoTask)obj, View.ObjectSpace, objectSpace, ref newObjectsCount);
                 objInNewObjectSpace.Status = (BusinessObjects.TaskStatus)args.SelectedChoiceActionItem.Data;

@@ -1,12 +1,12 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Text.Json.Serialization;
-using DevExpress.ExpressApp.ConditionalAppearance;
+﻿using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Persistent.Validation;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace MainDemo.Module.BusinessObjects;
 
@@ -41,8 +41,7 @@ public class DemoTask : BaseObject {
             if(isLoaded) {
                 if(value == TaskStatus.Completed) {
                     DateCompleted = DateTime.Now;
-                }
-                else {
+                } else {
                     DateCompleted = null;
                 }
             }

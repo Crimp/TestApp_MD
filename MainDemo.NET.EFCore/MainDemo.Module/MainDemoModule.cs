@@ -94,8 +94,7 @@ public sealed class MainDemoModule : ModuleBase {
             };
             startupActions.Add(showUseSQLAlternativeInfoAction);
             return startupActions;
-        }
-        else {
+        } else {
             return base.GetStartupActions();
         }
     }
@@ -111,8 +110,7 @@ public sealed class MainDemoModule : ModuleBase {
                 var config = Application.ServiceProvider.GetService<IConfiguration>();
                 if(config != null) {
                     siteMode = config["SiteMode"];
-                }
-                else {
+                } else {
                     siteMode = System.Configuration.ConfigurationManager.AppSettings["SiteMode"];
                 }
                 isSiteMode = ((siteMode != null) && (siteMode.ToLower() == "true"));
