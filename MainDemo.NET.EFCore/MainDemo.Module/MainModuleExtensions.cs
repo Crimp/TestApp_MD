@@ -44,12 +44,12 @@ public static class MainDemoModuleExtensions {
         });
 
         services.PostConfigure<AuthenticationStandardProviderOptions>(options => {
-            //options.Events.OnFindUser = context => {
-            //    if(string.IsNullOrEmpty(context.LogonParameters.UserName)) {
-            //        throw new UserFriendlySecurityException(SecurityExceptionId.UserNameIsEmpty);
-            //    }
-            //    context.User = context.ObjectSpace.FirstOrDefault<ApplicationUser>(e => e.UserName == context.LogonParameters.UserName);
-            //};
+            options.Events.OnFindUser = context => {
+                if(string.IsNullOrEmpty(context.LogonParameters.UserName)) {
+                    throw new UserFriendlySecurityException(SecurityExceptionId.UserNameIsEmpty);
+                }
+                context.User = context.ObjectSpace.FirstOrDefault<ApplicationUser>(e => e.UserName == context.LogonParameters.UserName);
+            };
         });
 
         return services;
