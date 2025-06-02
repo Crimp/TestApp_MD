@@ -1,0 +1,265 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TargetFramework>net9.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <PackageLocalizations>de</PackageLocalizations>
+    <AssemblyName>MainDemo.Blazor.Server</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="System.Drawing.Common" />
+    <PackageReference Include="Castle.Core" />
+    <PackageReference Include="Microsoft.AspNetCore.OData" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="System.Private.Uri" />
+    <PackageReference Include="System.Reactive" />
+    <PackageReference Include="System.Diagnostics.StackTrace" />
+    <PackageReference Include="System.CodeDom" />
+	<PackageReference Include="Microsoft.Identity.Client" />
+	<PackageReference Include="Microsoft.Identity.Web.UI" />
+	<PackageReference Include="Microsoft.NETCore.Platforms" />
+	<PackageReference Include="System.Security.AccessControl" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" VersionOverride="9.0.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" VersionOverride="9.0.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" VersionOverride="9.0.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" VersionOverride="9.0.0" />
+	  <PackageReference Include="System.Text.Json" VersionOverride="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MainDemo.Module\MainDemo.Module.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+	  <Reference Include="DevExtreme.AspNet.Data">
+		  <HintPath>..\..\DX_Dlls\DevExtreme.AspNet.Data.dll</HintPath>
+	  </Reference>
+    <Reference Include="DevExpress.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Blazor.Resources.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.Blazor.Resources.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.Data.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.EFCore.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.AuditTrail.EFCore.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.TreeListEditors.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.AspNetCore.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.AspNetCore.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ConditionalAppearance.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.FileAttachment.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Notifications.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Notifications.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Notifications.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Notifications.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Objects.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Objects.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Office.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Office.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Scheduler.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Scheduler.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Security.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.AspNetCore.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Security.AspNetCore.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Validation.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Validation.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ViewVariantsModule.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.Persistent.Base.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.EntityFrameworkCore.Security.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.EntityFrameworkCore.Security.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.EFCore.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.EFCore.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.EFCore.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.Persistent.BaseImpl.EFCore.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.AspNetCore.Reporting.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.AspNetCore.Reporting.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Blazor.Reporting.v24.2.JSBasedControls">
+      <HintPath>..\..\DX_Dlls\DevExpress.Blazor.Reporting.v24.2.JSBasedControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Blazor.Reporting.v24.2.JSBasedControls.Common">
+      <HintPath>..\..\DX_Dlls\DevExpress.Blazor.Reporting.v24.2.JSBasedControls.Common.dll</HintPath>
+    </Reference>
+	  <Reference Include="DevExpress.Blazor.Reporting.v24.2.Viewer">
+      <HintPath>..\..\DX_Dlls\DevExpress.Blazor.Reporting.v24.2.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Blazor.v24.2.Viewer">
+      <HintPath>..\..\DX_Dlls\DevExpress.Blazor.v24.2.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Blazor.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ReportsV2.Blazor.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ReportsV2.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.WebApi.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.WebApi.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v24.2">
+      <HintPath>..\..\DX_Dlls\DevExpress.XtraReports.v24.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v24.2.Core">
+      <HintPath>..\..\DX_Dlls\DevExpress.Printing.v24.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v24.2.Skia">
+      <HintPath>..\..\DX_Dlls\DevExpress.Drawing.v24.2.Skia.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Services\**\*.cs" />
+    <Compile Include="API\CRUD\CustomDataService.cs" />
+    <Compile Include="API\Security\AuthenticationController.cs" />
+    <Compile Include="Controllers\DisableActionsController.cs" />
+    <Compile Include="Controllers\LogonParametersViewController.cs" />
+    <Compile Include="Controllers\LogonTitleController.cs" />
+    <Compile Include="Controllers\ReportLocalizationController.cs" />
+    <Compile Include="API\Reports\ReportController.cs" />
+    <Compile Include="Controllers\GlobalMessengerController.cs" />
+    <Compile Include="Controllers\UseSQLAlternativeInfoController.cs" />
+    <Compile Include="CustomTypePropertyEditor.cs" />
+    <Compile Include="MainDemoBlazorApplication.cs" />
+    <Compile Include="BlazorModule.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="API\!!!Feedback\Readme.txt" />
+    <Content Include="API\AuditTrail\Readme.txt" />
+    <Content Include="API\FileAttachments\Readme.txt" />
+    <Content Include="API\Localization\Readme.txt" />
+    <Content Include="API\Reports\Readme.txt" />
+    <Content Include="API\Security\Readme.txt" />
+    <Content Include="Pages\_Host.cshtml" />
+    <Content Include="Properties\launchSettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="wwwroot\**\*.*" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="_Imports.razor" />
+    <Content Include="App.razor" />
+    <Content Include="appsettings.Development.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Model.xafml" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Resources\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor.Resources</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Resources\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor.Resources</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Themes\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor.Themes</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Themes\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor.Themes</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Reporting.JSBasedControls.Common\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor.Reporting.JSBasedControls.Common</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Reporting.JSBasedControls.Common\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor.Reporting.JSBasedControls.Common</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+	  <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Reporting.Viewer\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor.Reporting.Viewer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Reporting.Viewer\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor.Reporting.Viewer</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Viewer\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor.Viewer</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.Viewer\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor.Viewer</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.ExpressApp.Blazor\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.ExpressApp.Blazor</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.ExpressApp.Blazor\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.ExpressApp.Blazor</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.RichEdit\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.Blazor.RichEdit</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.Blazor.RichEdit\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.Blazor.RichEdit</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.ExpressApp.Office.Blazor\wwwroot\**">
+      <SourceType>Package</SourceType>
+      <SourceId>DevExpress.ExpressApp.Office.Blazor</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\..\DX_Dlls\staticwebassets\DevExpress.ExpressApp.Office.Blazor\wwwroot\</ContentRoot>
+      <BasePath>_content/DevExpress.ExpressApp.Office.Blazor</BasePath>
+      <RelativePath>%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
+    </StaticWebAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model_de.xafml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,1 @@
+{"version":3,"file":"nameof-factory-24.2.js","sources":["../../Scripts/utils/nameof-factory.ts"],"sourcesContent":["// eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-module-boundary-types\r\nexport const nameofFactory = () => (name) => name;\r\n"],"names":[],"mappings":"AAAA;AACY,MAAC,aAAa,GAAG,MAAM,CAAC,IAAI,KAAK;;;;"}
