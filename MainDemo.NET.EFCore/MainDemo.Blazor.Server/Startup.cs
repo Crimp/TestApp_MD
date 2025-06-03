@@ -3,6 +3,7 @@ using DevExpress.ExpressApp.Blazor.ApplicationBuilder;
 using DevExpress.ExpressApp.Blazor.Services;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.WebApi.Services;
+using MainDemo.Blazor.Server.API;
 using MainDemo.Blazor.Server.Services;
 using MainDemo.Module;
 using MainDemo.Module.Authentication;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Server.Circuits;
 using Microsoft.AspNetCore.OData;
+using Microsoft.AspNetCore.OData.Formatter.Serialization;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -182,7 +184,13 @@ public class Startup {
             .AddOData((options, serviceProvider) => {
                 options
                     .EnableQueryFeatures(100)
-                    .AddRouteComponents("api/odata", new EdmModelBuilder(serviceProvider).GetEdmModel());
+                    .AddRouteComponents("api/odata", new EdmModelBuilder(serviceProvider).GetEdmModel(), _routeServices => {
+                        var oDataResourceSerializer = _routeServices.FirstOrDefault(x => x.ServiceType == typeof(ODataResourceSerializer));
+                        if(oDataResourceSerializer != null) {
+                            _routeServices.Remove(oDataResourceSerializer);
+                        }
+                        _routeServices.AddSingleton<ODataResourceSerializer, CustomODataResourceSerializer>();
+                    });
             });
 
         services.AddSwaggerGen(c => {

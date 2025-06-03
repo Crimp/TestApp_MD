@@ -1,0 +1,138 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MainDemo.Blazor.Server\MainDemo.Blazor.Server.csproj" />
+    <ProjectReference Include="..\MainDemo.Module\MainDemo.Module.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="DevExtreme.AspNet.Data">
+			<HintPath>..\..\DX_Dlls\DevExtreme.AspNet.Data.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Blazor.Resources.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.Blazor.Resources.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Data.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.Data.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.AuditTrail.EFCore.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.AuditTrail.EFCore.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.TreeListEditors.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.TreeListEditors.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.AspNetCore.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.AspNetCore.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ConditionalAppearance.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.FileAttachment.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.FileAttachment.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Notifications.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Notifications.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Notifications.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Notifications.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Objects.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Objects.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Office.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Office.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Scheduler.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Scheduler.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Security.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Security.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Security.AspNetCore.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Security.AspNetCore.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Validation.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Validation.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.Validation.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.Validation.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ViewVariantsModule.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Persistent.Base.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.Persistent.Base.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.EntityFrameworkCore.Security.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.EntityFrameworkCore.Security.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.EFCore.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.EFCore.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Persistent.BaseImpl.EFCore.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.Persistent.BaseImpl.EFCore.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.AspNetCore.Reporting.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.AspNetCore.Reporting.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Blazor.Reporting.v24.2.JSBasedControls">
+			<HintPath>..\..\DX_Dlls\DevExpress.Blazor.Reporting.v24.2.JSBasedControls.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Blazor.Reporting.v24.2.JSBasedControls.Common">
+			<HintPath>..\..\DX_Dlls\DevExpress.Blazor.Reporting.v24.2.JSBasedControls.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Blazor.Reporting.v24.2.Viewer">
+			<HintPath>..\..\DX_Dlls\DevExpress.Blazor.Reporting.v24.2.Viewer.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Blazor.v24.2.Viewer">
+			<HintPath>..\..\DX_Dlls\DevExpress.Blazor.v24.2.Viewer.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.ReportsV2.Blazor.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ReportsV2.Blazor.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.ReportsV2.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.ReportsV2.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.ExpressApp.WebApi.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.ExpressApp.WebApi.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.XtraReports.v24.2">
+			<HintPath>..\..\DX_Dlls\DevExpress.XtraReports.v24.2.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Printing.v24.2.Core">
+			<HintPath>..\..\DX_Dlls\DevExpress.Printing.v24.2.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Drawing.v24.2.Skia">
+			<HintPath>..\..\DX_Dlls\DevExpress.Drawing.v24.2.Skia.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+</Project>

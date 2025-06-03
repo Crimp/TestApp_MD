@@ -160,6 +160,7 @@
   <ItemGroup>
     <Compile Include="Services\**\*.cs" />
     <Compile Include="API\CRUD\CustomDataService.cs" />
+    <Compile Include="API\CustomODataResourceSerializer.cs" />
     <Compile Include="API\Security\AuthenticationController.cs" />
     <Compile Include="Controllers\DisableActionsController.cs" />
     <Compile Include="Controllers\LogonParametersViewController.cs" />

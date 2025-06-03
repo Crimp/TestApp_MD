@@ -1,11 +1,12 @@
 ﻿#nullable enable
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
 using DevExpress.ExpressApp.Security;
+using MainDemo.Module.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Annotations;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace MainDemo.WebApi.Jwt;
 
@@ -26,7 +27,7 @@ public class AuthenticationController : ControllerBase {
     public IActionResult Authenticate(
         [FromBody]
             [SwaggerRequestBody(@"For example: <br /> { ""userName"": ""Sam"", ""password"": """" }")]
-            AuthenticationStandardLogonParameters logonParameters
+            CustomAuthenticationStandardLogonParameters logonParameters
     ) {
         var authenticationResult = signInManager.AuthenticateByLogonParameters(logonParameters);
 
