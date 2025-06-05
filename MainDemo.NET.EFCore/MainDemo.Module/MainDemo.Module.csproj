@@ -127,11 +127,11 @@
     <PackageReference Include="Microsoft.Data.SqlClient" />
     <PackageReference Include="System.Configuration.ConfigurationManager" />
     <PackageReference Include="Castle.Core" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" VersionOverride="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" VersionOverride="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" VersionOverride="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" VersionOverride="9.0.0" />
-	  <PackageReference Include="System.Text.Json" VersionOverride="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" />
+	  <PackageReference Include="System.Text.Json" />
     <PackageReference Include="Remote.Linq.Text.Json" />
     <PackageReference Include="Azure.Identity" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" />

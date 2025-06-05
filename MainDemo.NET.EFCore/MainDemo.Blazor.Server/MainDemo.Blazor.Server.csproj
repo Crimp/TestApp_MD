@@ -36,11 +36,11 @@
 	<PackageReference Include="Microsoft.Identity.Web.UI" />
 	<PackageReference Include="Microsoft.NETCore.Platforms" />
 	<PackageReference Include="System.Security.AccessControl" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" VersionOverride="9.0.0" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore" VersionOverride="9.0.0" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" VersionOverride="9.0.0" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" VersionOverride="9.0.0" />
-	  <PackageReference Include="System.Text.Json" VersionOverride="9.0.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+	  <PackageReference Include="System.Text.Json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MainDemo.Module\MainDemo.Module.csproj" />
