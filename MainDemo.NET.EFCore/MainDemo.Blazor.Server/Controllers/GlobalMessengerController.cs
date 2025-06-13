@@ -4,7 +4,7 @@ using MainDemo.Blazor.Server.Services;
 
 namespace MainDemo.Blazor.Server.Controllers {
     public class GlobalMessengerController : WindowController {
-        readonly GlobalMessenger messenger;
+        readonly ApplicationScopeMessenger messenger;
 
         public GlobalMessengerController() {
             ParametrizedAction parametrizedAction = new ParametrizedAction(this, "ShowMessage", DevExpress.Persistent.Base.PredefinedCategory.Edit, typeof(string));
@@ -16,7 +16,7 @@ namespace MainDemo.Blazor.Server.Controllers {
             };
         }
         [ActivatorUtilitiesConstructor]
-        public GlobalMessengerController(GlobalMessenger messenger) : this() {
+        public GlobalMessengerController(ApplicationScopeMessenger messenger) : this() {
             this.messenger = messenger;
         }
 
