@@ -7,7 +7,6 @@ using Microsoft.OData.Edm;
 
 namespace MainDemo.Blazor.Server.API {
     public class CustomODataResourceSerializer : ODataResourceSerializer {
-        readonly Dictionary<string, Dictionary<string, bool>> hasSecurityBrowsableAttributeCache = new();
         public CustomODataResourceSerializer(IODataSerializerProvider serializerProvider) : base(serializerProvider) { }
 
         public override ODataProperty CreateStructuralProperty(IEdmStructuralProperty structuralProperty, ResourceContext resourceContext) {

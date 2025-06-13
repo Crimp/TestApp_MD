@@ -81,23 +81,23 @@ public sealed class MainDemoModule : ModuleBase {
             };
     }
 
-    public override IList<PopupWindowShowAction> GetStartupActions() {
-        if(!IsSiteMode && !DemoDbEngineDetectorHelper.IsSqlServerAccessible()) {
-            IList<PopupWindowShowAction> startupActions = base.GetStartupActions();
-            PopupWindowShowAction showUseSQLAlternativeInfoAction = new PopupWindowShowAction();
-            IObjectSpace objectSpace = Application.CreateObjectSpace(typeof(UseSQLAlternativeInfo));
-            UseSQLAlternativeInfo useSqlAlternativeInfo = objectSpace.GetObject<UseSQLAlternativeInfo>(UseSQLAlternativeInfoSingleton.Instance.Info);
-            showUseSQLAlternativeInfoAction.CustomizePopupWindowParams += delegate (Object sender, CustomizePopupWindowParamsEventArgs e) {
-                e.View = Application.CreateDetailView(objectSpace, useSqlAlternativeInfo, true);
-                e.DialogController.CancelAction.Active["Required"] = false;
-                e.IsSizeable = false;
-            };
-            startupActions.Add(showUseSQLAlternativeInfoAction);
-            return startupActions;
-        } else {
-            return base.GetStartupActions();
-        }
-    }
+    //public override IList<PopupWindowShowAction> GetStartupActions() {
+    //    if(!IsSiteMode && !DemoDbEngineDetectorHelper.IsSqlServerAccessible()) {
+    //        IList<PopupWindowShowAction> startupActions = base.GetStartupActions();
+    //        PopupWindowShowAction showUseSQLAlternativeInfoAction = new PopupWindowShowAction();
+    //        IObjectSpace objectSpace = Application.CreateObjectSpace(typeof(UseSQLAlternativeInfo));
+    //        UseSQLAlternativeInfo useSqlAlternativeInfo = objectSpace.GetObject<UseSQLAlternativeInfo>(UseSQLAlternativeInfoSingleton.Instance.Info);
+    //        showUseSQLAlternativeInfoAction.CustomizePopupWindowParams += delegate (Object sender, CustomizePopupWindowParamsEventArgs e) {
+    //            e.View = Application.CreateDetailView(objectSpace, useSqlAlternativeInfo, true);
+    //            e.DialogController.CancelAction.Active["Required"] = false;
+    //            e.IsSizeable = false;
+    //        };
+    //        startupActions.Add(showUseSQLAlternativeInfoAction);
+    //        return startupActions;
+    //    } else {
+    //        return base.GetStartupActions();
+    //    }
+    //}
 
     static MainDemoModule() {
         ResetViewSettingsController.DefaultAllowRecreateView = false;

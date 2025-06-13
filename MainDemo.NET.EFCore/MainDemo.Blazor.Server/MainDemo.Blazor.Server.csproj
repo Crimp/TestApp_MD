@@ -20,6 +20,7 @@
     <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+	  <PackageReference Include="SkiaSharp" />
 	  <PackageReference Include="System.Drawing.Common" />
     <PackageReference Include="Castle.Core" />
     <PackageReference Include="Microsoft.AspNetCore.OData" />
