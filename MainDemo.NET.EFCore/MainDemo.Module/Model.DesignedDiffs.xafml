@@ -139,7 +139,7 @@
         <PropertyEditor Id="Password" PropertyName="Password" View="" ToolTip="Leave this field empty and hit the Enter key to log in" IsNewNode="True" />
         <StaticText Id="PasswordHint" Text="This demo app does not require a password for login" IsNewNode="True" />
         <PropertyEditor Id="UserName" PropertyName="UserName" IsNewNode="True" />
-		  <PropertyEditor Id="Email" PropertyName="Email" Caption="Email or User name" IsNewNode="True" />
+		  <PropertyEditor Id="UserData" PropertyName="UserData" Caption="Email or User name" IsNewNode="True" />
         <StaticText Id="WelcomeText" Text="Welcome to the XAF Demo" IsNewNode="True" />
       </Items>
       <Layout IsNewNode="True">
@@ -155,7 +155,7 @@
               </LayoutGroup>
               <LayoutGroup Id="Editors" Index="1" ShowCaption="False" IsNewNode="True">
                 <!--<LayoutItem Id="UserName" Index="0" ViewItem="UserName" IsNewNode="True" />-->
-				  <LayoutItem Id="Email" Index="1" ViewItem="Email" IsNewNode="True" />
+				  <LayoutItem Id="UserData" Index="1" ViewItem="UserData" IsNewNode="True" />
                 <LayoutItem Id="Password" Index="2" ViewItem="Password" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="PasswordHintGroup" Index="2" ShowCaption="False" IsNewNode="True">

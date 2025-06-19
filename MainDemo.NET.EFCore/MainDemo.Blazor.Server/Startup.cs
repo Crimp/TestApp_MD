@@ -134,7 +134,7 @@ public class Startup {
                     options.LogonParametersType = typeof(CustomAuthenticationStandardLogonParameters);
 
                     options.Events.OnFindUser = context => {
-                        string userData = ((CustomAuthenticationStandardLogonParameters)context.LogonParameters).Email;
+                        string userData = ((CustomAuthenticationStandardLogonParameters)context.LogonParameters).UserData;
                         ApplicationUser applicationUser = null;
                         if(userData.Contains("@")) {
                             applicationUser = context.ObjectSpace.FirstOrDefault<ApplicationUser>(e => e.Email == userData);
@@ -155,7 +155,7 @@ public class Startup {
                 };
                 application.LastLogonParametersRead += (s, e) => {
                     if(e.LogonObject is CustomAuthenticationStandardLogonParameters logonParameters && string.IsNullOrEmpty(logonParameters.UserName)) {
-                        logonParameters.Email = "Sam@test.com";
+                        logonParameters.UserData = "Sam@test.com";
                     }
                 };
             });

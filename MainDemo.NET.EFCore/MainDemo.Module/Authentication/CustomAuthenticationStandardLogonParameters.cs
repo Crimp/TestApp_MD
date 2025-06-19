@@ -7,13 +7,13 @@ using DevExpress.ExpressApp.Security;
 
 namespace MainDemo.Module.Authentication {
     public class CustomAuthenticationStandardLogonParameters : AuthenticationStandardLogonParameters {
-        string email;
+        string _userData;
 
         public CustomAuthenticationStandardLogonParameters() { }
         public CustomAuthenticationStandardLogonParameters(string userName, string password) : base(userName, password) { }
-        public string Email {
-            get { return email; }
-            set { email = value; RaisePropertyChanged("Email"); }
+        public string UserData {
+            get { return _userData; }
+            set { _userData = value; RaisePropertyChanged("UserData"); }
         }
     }
 }

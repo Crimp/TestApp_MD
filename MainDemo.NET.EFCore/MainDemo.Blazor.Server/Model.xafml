@@ -219,7 +219,7 @@
 							</LayoutGroup>
 							<LayoutGroup Id="Editors" RelativeSize="7.2">
 								<!--<LayoutItem Id="UserName" Index="1" />-->
-								<LayoutItem Id="Email" Index="1" />
+								<LayoutItem Id="UserData" Index="1" />
 								<LayoutItem Id="Password" Index="2" />
 							</LayoutGroup>
 							<LayoutGroup Id="PasswordHintGroup">

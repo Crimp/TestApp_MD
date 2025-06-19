@@ -21,7 +21,7 @@ namespace MainDemo.Blazor.Server.API {
             var clrTypeInfo = typesInfo.FindTypeInfo(typeName);
             var hasAttr = clrTypeInfo.FindMember(propertyName)?.FindAttribute<SecurityBrowsableAttribute>(true) != null;
 
-            return false; // hasAttr; // Uncomment this line to enable the security check
+            return hasAttr;
         }
     }
 }

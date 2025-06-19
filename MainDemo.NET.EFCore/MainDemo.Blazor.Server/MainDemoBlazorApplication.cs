@@ -37,7 +37,7 @@ public class MainDemoBlazorApplication : BlazorApplication {
     }
     private void MainDemoBlazorApplication_LastLogonParametersRead(object sender, LastLogonParametersReadEventArgs e) {
         if(e.LogonObject is CustomAuthenticationStandardLogonParameters logonParameters && string.IsNullOrEmpty(logonParameters.UserName)) {
-            logonParameters.Email = "Sam@test.com";
+            logonParameters.UserData = "Sam@test.com";
         }
     }
 }
