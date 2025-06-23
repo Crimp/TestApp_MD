@@ -70,7 +70,7 @@ namespace Tests {
         static async Task<string> GetUserTokenAsync(HttpClient httpClient, string userName, string password, string requestPath) {
             var request = new HttpRequestMessage(HttpMethod.Post, requestPath);
             request.Content = new StringContent(
-                $"{{ \"Email\": \"{userName}\", \"password\": \"{password}\" }}", Encoding.UTF8, "application/json");
+                $"{{ \"UserData\": \"{userName}\", \"password\": \"{password}\" }}", Encoding.UTF8, "application/json");
 
             var httpResponse = await httpClient.SendAsync(request);
             if(!httpResponse.IsSuccessStatusCode) {
