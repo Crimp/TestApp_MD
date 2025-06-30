@@ -44,18 +44,16 @@ public class ClearEmployeeTasksListViewController : ObjectViewController<ListVie
 
     const string InProgressTasksKey = "Has 'InProgress' tasks";
     private void View_SelectionChanged(object sender, EventArgs e) {
-        int taskCount = 0;
         foreach(var selectedItem in View.SelectedObjects) {
             foreach(var task in ((Employee)selectedItem).Tasks) {
                 if(task.Status == BusinessObjects.TaskStatus.InProgress) {
                     clearTasksAction.Enabled.SetItemValue(InProgressTasksKey, false);
                     return;
                 }
-                taskCount++;
             }
         }
         clearTasksAction.Enabled.RemoveItem(InProgressTasksKey);
-        clearTasksAction.ConfirmationMessage = $"Are you sure you want to unlink {taskCount} not in progress tasks?";
+        clearTasksAction.ConfirmationMessage = $"Are you sure you want to unlink not in progress tasks?";
 
     }
 
