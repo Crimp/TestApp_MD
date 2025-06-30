@@ -133,7 +133,7 @@ public class Startup {
                     options.IsSupportChangePassword = true;
                     options.LogonParametersType = typeof(CustomAuthenticationStandardLogonParameters);
 
-                    options.Events.OnFindUser = context => {
+                    options.Events.OnFindUser += context => {
                         string userData = ((CustomAuthenticationStandardLogonParameters)context.LogonParameters).UserData;
                         ApplicationUser applicationUser = null;
                         if(userData.Contains("@")) {

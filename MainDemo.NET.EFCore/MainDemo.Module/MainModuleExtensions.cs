@@ -43,7 +43,7 @@ public static class MainDemoModuleExtensions {
         });
 
         services.PostConfigure<AuthenticationStandardProviderOptions>(options => {
-            options.Events.OnFindUser = context => {
+            options.Events.OnFindUser += context => {
                 if(string.IsNullOrEmpty(context.LogonParameters.UserName)) {
                     throw new UserFriendlySecurityException(SecurityExceptionId.UserNameIsEmpty);
                 }
