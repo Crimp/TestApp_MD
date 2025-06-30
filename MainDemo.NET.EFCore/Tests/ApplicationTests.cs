@@ -53,9 +53,11 @@ public class ApplicationTests : IClassFixture<WebApplicationFactory<Startup>> {
         var signInManager = services.GetRequiredService<SignInManager>();
         var logonParameters = new CustomAuthenticationStandardLogonParameters {
             Password = "",
-            UserData = "Sam",
+            UserData = "Sam@test.com",
         };
-        signInManager.SignInByLogonParameters(logonParameters);
+        var result = signInManager.SignInByLogonParameters(logonParameters);
+        var errorMessage = result.Succeeded ? "" : result.Error.Message;
+        Assert.True(result.Succeeded, $"SignInByLogonParameters failed: {errorMessage}");
 
         var appProvider = services.GetRequiredService<IXafApplicationProvider>();
         using var application = appProvider.GetApplication();
