@@ -20,7 +20,7 @@ public class ApplicationTests : IClassFixture<WebApplicationFactory<Startup>> {
     }
 
     [Fact]
-    public async Task SignInByLogonParameters() {
+    public async Task SignInByLogonParameters_test() {
         await Task.Yield();
 
         var serviceScopeFactory = webApplicationFactory.Services.GetRequiredService<IServiceScopeFactory>();
